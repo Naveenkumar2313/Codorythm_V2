@@ -1,4 +1,3 @@
-# Codorythm_V2
 # Codorythm Algorithm Content Development Guide
 
 Welcome to the **Codorythm Algorithm Repository**.
