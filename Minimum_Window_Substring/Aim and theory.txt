@@ -1,0 +1,50 @@
+Aim :- 
+
+The aim of this visualization is to help learners understand the working of the Minimum Window Substring algorithm using intuitive animations and interactive controls.
+
+This simulator enables users to:
+
+Visualize how the sliding window expands and contracts over the string.
+Understand how character frequencies of the target string t are tracked inside the window.
+See how the window shrinks from the left once all required characters are covered.
+Interactively control steps and trace the window movement.
+Receive audio feedback and real-time updates on the current window size and minimum length found.
+Learn how the sliding window technique achieves O(n) efficiency.
+
+This is ideal for learners exploring sliding window techniques and solving problems involving character frequency matching and string manipulation.
+
+Theory:- 
+
+Definition: Minimum Window Substring is a sliding window problem where we find the smallest substring of s that contains all characters of t (including duplicates).
+
+Working Principle:
+Maintain a sliding window with left and right pointers.
+Expand the window by moving the right pointer and add characters to a frequency map.
+Track how many required characters are currently satisfied (formed count).
+Once all characters of t are covered, try to shrink the window from the left.
+Record the minimum window size whenever all characters are satisfied.
+
+Key Insight:
+Use two frequency maps — one for t and one for the current window.
+A character is "satisfied" when its window frequency meets or exceeds its required frequency.
+Shrink from the left as long as the window remains valid to minimize the window size.
+
+Precondition:
+
+- s and t consist of uppercase and lowercase English letters.
+- 1 <= s.length, t.length <= 10^5.
+
+Advantages:
+
+- Achieves optimal O(n) time complexity.
+- Works for any character set using a hash map.
+- Handles duplicate characters in t correctly.
+
+Disadvantages:
+
+- Requires two frequency maps which adds slight space overhead.
+- Careful tracking of the "formed" count is needed to avoid off-by-one errors.
+
+Time Complexity: O(n) — each character in s is visited at most twice.
+
+Space Complexity: O(k) — where k is the number of unique characters in s and t (at most 52 for English letters).

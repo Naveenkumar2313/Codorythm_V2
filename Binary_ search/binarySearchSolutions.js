@@ -138,7 +138,7 @@ public class Solution {
                 r = mid - 1;
             }
         }
-        return ans;
+        return now give the solutions for the given problems of FractionalKnapsackSolutions.jsans;
     }
 
     public static void main(String[] args) {

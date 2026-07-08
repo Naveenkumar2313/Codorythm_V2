@@ -1,0 +1,54 @@
+Aim :- 
+
+The aim of this visualization is to help learners understand the working of the Huffman Coding algorithm using intuitive animations and interactive controls.
+
+This simulator enables users to:
+
+Visualize how the priority queue (min-heap) builds the Huffman tree step by step.
+Understand how character frequencies determine the structure of the tree.
+See how shorter codes are assigned to more frequent characters and longer codes to less frequent ones.
+Interactively control steps and trace the tree construction process.
+Receive audio feedback and real-time updates on the current tree state and encoded output.
+Learn how Huffman Coding achieves optimal prefix-free encoding.
+
+This is ideal for learners exploring greedy algorithms and solving problems involving data compression and optimal encoding.
+
+Theory:- 
+
+Definition: Huffman Coding is a greedy algorithm used for lossless data compression. It assigns variable-length binary codes to characters based on their frequencies — more frequent characters get shorter codes.
+
+Working Principle:
+Count the frequency of each character in the input.
+Insert all characters as leaf nodes into a min-heap (priority queue) ordered by frequency.
+Repeatedly extract the two nodes with the lowest frequency.
+Create a new internal node with these two as children and frequency equal to their sum.
+Insert the new node back into the heap.
+Repeat until only one node remains — this is the root of the Huffman tree.
+Traverse the tree to assign binary codes: left edge = 0, right edge = 1.
+
+Key Insight:
+Characters with higher frequency get shorter binary codes.
+The resulting code is prefix-free — no code is a prefix of another.
+This guarantees optimal compression for a given set of character frequencies.
+
+Precondition:
+
+- Input consists of characters with associated frequencies.
+- All frequencies are positive integers.
+- At least one character must be present.
+
+Advantages:
+
+- Achieves optimal prefix-free encoding for given character frequencies.
+- Lossless compression — original data can be perfectly reconstructed.
+- Efficient O(n log n) time complexity using a min-heap.
+
+Disadvantages:
+
+- Requires two passes — one to count frequencies and one to encode.
+- The frequency table (or tree) must be transmitted alongside the encoded data.
+- Not adaptive — frequencies must be known in advance.
+
+Time Complexity: O(n log n) — each of the n insertions and extractions from the heap takes O(log n).
+
+Space Complexity: O(n) — the heap and tree store at most 2n - 1 nodes for n unique characters.

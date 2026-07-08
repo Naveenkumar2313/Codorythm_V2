@@ -1,0 +1,43 @@
+Aim :- 
+
+The aim of this visualization is to help learners understand the working of the Longest Substring Without Repeating Characters algorithm using intuitive animations and interactive controls.
+
+This simulator enables users to:
+
+Visualize how the sliding window expands and contracts over the string.
+Understand how a hash map or set tracks characters in the current window.
+Interactively control steps and trace the window movement.
+Receive audio feedback and real-time updates on the current window size and maximum length found.
+Learn how the sliding window technique achieves O(n) efficiency.
+
+This is ideal for learners exploring sliding window techniques and solving problems involving substrings and character frequency.
+
+Theory:- 
+
+Definition: Longest Substring Without Repeating Characters is a classic sliding window problem where we find the length of the longest substring that contains no duplicate characters.
+
+Working Principle:
+Maintain two pointers (left and right) representing the current window.
+Expand the right pointer to include new characters.
+When a duplicate character is found, shrink the window from the left until the duplicate is removed.
+Track the maximum window size seen so far.
+
+Precondition:
+
+- Input can be any string including letters, digits, and symbols.
+- The string can be empty, in which case the answer is 0.
+
+Advantages:
+
+- Achieves optimal O(n) time complexity using the sliding window approach.
+- Simple to implement using a hash map or set.
+- Works for any character set (ASCII, Unicode).
+
+Disadvantages:
+
+- Requires extra O(min(n, m)) space for the hash map/set where m is the character set size.
+- Only finds the length, not the actual substring (needs minor modification to retrieve it).
+
+Time Complexity: O(n) — each character is visited at most twice (once by right, once by left pointer).
+
+Space Complexity: O(min(n, m)) where m is the size of the character set.

@@ -1,0 +1,55 @@
+Aim :- 
+
+The aim of this visualization is to help learners understand the working of the Fractional Knapsack (Greedy) algorithm using clear animations and interactive controls.
+
+This simulator enables users to:
+
+Visualize how items are evaluated using value-to-weight ratio.
+Select items greedily starting from the highest ratio.
+See how the knapsack capacity reduces as items are added.
+Understand how the algorithm allows taking fractions of an item.
+Interactively control steps and trace the selection order.
+Receive audio feedback and real-time updates on remaining capacity and chosen value.
+Learn why Fractional Knapsack achieves optimal efficiency using a greedy strategy.
+
+This is ideal for learners exploring greedy optimization techniques and solving problems involving maximizing profit under a capacity constraint.
+
+Theory:- 
+
+Definition: Fractional Knapsack is an optimization problem where we maximize total value (profit) by filling a knapsack of limited capacity. Unlike 0/1 Knapsack, here we are allowed to take **fractions** of items.
+
+Working Principle:
+
+For each item, compute its **value density** (also called value-to-weight ratio):
+ratio = value / weight
+
+Sort all items in **descending order of ratio**.
+
+Then iterate through the sorted items:
+- If the remaining capacity is enough to take the whole item, take it completely.
+- Otherwise, take only the fraction of the item that fits in the remaining capacity.
+
+By always choosing the highest ratio item first (and taking fractions when needed), the greedy strategy guarantees the maximum possible value.
+
+Precondition:
+
+- Each item must have a positive weight.
+- The knapsack capacity must be non-negative.
+- Values and weights should be numeric (typically integers or decimals).
+
+Advantages:
+
+- Produces an **optimal** solution due to the greedy choice property.
+- Much faster than dynamic programming approaches for large inputs.
+- Handles fractional selection, which makes the greedy approach effective.
+
+Disadvantages:
+
+- Not applicable to problems where items cannot be broken (that would be 0/1 Knapsack).
+- If fractions are not allowed by the real-world scenario, the result may not be feasible.
+
+Time Complexity: O(n log n) (sorting by ratio; the selection pass is O(n))
+
+Space Complexity: O(n) (to store items and sorting)
+
+

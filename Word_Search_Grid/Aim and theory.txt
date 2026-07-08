@@ -1,0 +1,35 @@
+Aim :- 
+
+The aim of this visualization is to help learners understand the working of the Word Search in a Grid algorithm using intuitive animations and interactive control.
+
+This simulator enables users to:
+
+Visualize how the DFS/Backtracking explores each cell of the grid.
+Identify how the algorithm marks cells as visited and backtracks when a path fails.
+Interactively control steps and trace the search path through the grid.
+Receive audio feedback and real-time updates on the current search status.
+Learn how Word Search achieves its traversal using recursive backtracking.
+
+This is ideal for learners exploring grid-based search techniques and understanding how backtracking works on 2D matrices.
+
+Theory:- 
+
+Definition: Word Search in a Grid is a classic backtracking problem where we search for a given word in a 2D character grid. Starting from any cell, we explore all four directions (up, down, left, right) recursively to find the word.
+
+Working Principle: For each cell in the grid that matches the first character of the word, a DFS is initiated. At each step, the current cell is temporarily marked as visited. If the path leads to a dead end, the cell is unmarked (backtracked) and the next direction is tried.
+
+Precondition: The grid must be a non-empty 2D character matrix. The word must be a non-empty string.
+
+Advantages: 
+
+Works on any 2D grid without requiring preprocessing.
+Backtracking ensures no path is explored more than once per search attempt.
+
+Disadvantages:
+
+Can be slow for large grids with long words due to exponential worst-case time.
+Revisiting cells is prevented by marking, which requires careful backtracking.
+
+Time Complexity: O(m * n * 4^L) where m x n is the grid size and L is the length of the word.
+
+Space Complexity: O(L) for the recursion stack, where L is the length of the word.

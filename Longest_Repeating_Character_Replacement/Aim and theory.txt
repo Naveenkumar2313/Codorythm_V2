@@ -1,0 +1,49 @@
+Aim :- 
+
+The aim of this visualization is to help learners understand the working of the Longest Repeating Character Replacement algorithm using intuitive animations and interactive controls.
+
+This simulator enables users to:
+
+Visualize how the sliding window expands and contracts over the string.
+Understand how the most frequent character count in the window is tracked.
+See how at most k replacements are used to make all characters in the window the same.
+Interactively control steps and trace the window movement.
+Receive audio feedback and real-time updates on the current window size and maximum length found.
+Learn how the sliding window technique achieves O(n) efficiency.
+
+This is ideal for learners exploring sliding window techniques and solving problems involving character frequency and string manipulation.
+
+Theory:- 
+
+Definition: Longest Repeating Character Replacement is a sliding window problem where we find the length of the longest substring containing the same letter after replacing at most k characters.
+
+Working Principle:
+Maintain a sliding window with left and right pointers.
+Track the frequency of each character in the current window using a count array.
+Track the maximum frequency character count (maxCount) seen so far in the window.
+If the window size minus maxCount exceeds k, shrink the window from the left.
+The answer is the maximum window size seen.
+
+Key Insight:
+window_size - maxCount = number of characters that need to be replaced.
+If this value exceeds k, the window is invalid and must shrink.
+
+Precondition:
+
+- s consists of uppercase English letters.
+- 0 <= k <= s.length.
+
+Advantages:
+
+- Achieves optimal O(n) time complexity.
+- Simple count array replaces the need for a hash map.
+- Works efficiently for fixed character sets.
+
+Disadvantages:
+
+- Only works for a fixed character set (uppercase letters in standard form).
+- Requires careful handling of the maxCount variable during window shrinking.
+
+Time Complexity: O(n) — each character is processed at most twice.
+
+Space Complexity: O(1) — only a fixed-size count array of 26 characters is used.

@@ -1,0 +1,43 @@
+Aim :- 
+
+The aim of this visualization is to help learners understand the working of the Generate All Parentheses algorithm using intuitive animations and interactive controls.
+
+This simulator enables users to:
+
+Visualize how valid combinations of parentheses are built step by step using recursion/backtracking.
+Understand how open and close counts are tracked to ensure validity.
+Interactively control steps and trace the recursion tree.
+Receive audio feedback and real-time updates on the current combination being built.
+Learn how backtracking achieves efficient generation of all valid sequences.
+
+This is ideal for learners exploring recursion, backtracking techniques, and combinatorial generation problems.
+
+Theory:- 
+
+Definition: Generate All Parentheses is a classic backtracking problem where we generate all combinations of well-formed (valid) parentheses given n pairs.
+
+Working Principle:
+At each step, we can place an open bracket '(' if the count of open brackets used is less than n.
+We can place a close bracket ')' if the count of close brackets used is less than the count of open brackets used.
+When the length of the current string equals 2*n, we have a valid combination and add it to the result.
+
+Precondition:
+
+- n must be a positive integer.
+- The result contains exactly 2*n characters per combination.
+- Each combination must be a valid balanced parentheses string.
+
+Advantages:
+
+- Generates all valid combinations without producing invalid ones.
+- Backtracking avoids unnecessary exploration of invalid paths.
+- Clean and elegant recursive structure.
+
+Disadvantages:
+
+- The number of valid combinations grows as the nth Catalan number — can be large for big n.
+- Not suitable for very large n due to exponential output size.
+
+Time Complexity: O(4^n / sqrt(n)) — the nth Catalan number bounds the output size.
+
+Space Complexity: O(n) for the recursion stack depth.

@@ -1,0 +1,42 @@
+Aim :- 
+
+The aim of this visualization is to help learners understand the working of the AVL Tree (Self-Balancing Binary Search Tree) using intuitive animations and interactive control.
+
+This simulator enables users to:
+
+Visualize how the tree automatically rebalances after every insertion and deletion.
+Identify the four types of rotations: LL, RR, LR, and RL.
+Interactively insert and delete nodes while observing balance factor changes.
+Receive audio feedback and real-time updates on tree height and balance status.
+Learn how AVL trees achieve O(log n) efficiency for search, insert, and delete.
+
+This is ideal for learners exploring tree data structures and understanding self-balancing mechanisms.
+
+Theory:- 
+
+Definition: An AVL Tree is a self-balancing Binary Search Tree (BST) where the difference between the heights of the left and right subtrees (balance factor) of every node is at most 1.
+
+Working Principle: After every insertion or deletion, the balance factor of each affected node is checked. If any node becomes unbalanced (balance factor < -1 or > 1), one or two rotations are performed to restore balance.
+
+Balance Factor: balance_factor = height(left subtree) - height(right subtree). Valid values are -1, 0, and 1.
+
+Types of Rotations:
+
+LL Rotation (Right Rotation): Applied when a node is inserted into the left subtree of the left child.
+RR Rotation (Left Rotation): Applied when a node is inserted into the right subtree of the right child.
+LR Rotation (Left then Right): Applied when a node is inserted into the right subtree of the left child.
+RL Rotation (Right then Left): Applied when a node is inserted into the left subtree of the right child.
+
+Advantages:
+
+Guarantees O(log n) time for search, insert, and delete operations.
+Prevents worst-case O(n) degradation seen in unbalanced BSTs.
+
+Disadvantages:
+
+More complex implementation than a plain BST due to rotation logic.
+Slightly slower insertions and deletions compared to a plain BST due to rebalancing overhead.
+
+Time Complexity: O(log n) for search, insertion, and deletion.
+
+Space Complexity: O(n) for storing n nodes, O(log n) auxiliary space for recursive calls.
