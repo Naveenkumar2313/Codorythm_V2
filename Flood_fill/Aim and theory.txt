@@ -1,0 +1,38 @@
+Aim :-
+
+The aim of this visualization is to help learners understand the working of the Flood Fill algorithm through an interactive grid-based simulation that demonstrates how connected regions are filled using Depth First Search (DFS) or Breadth First Search (BFS).
+
+This simulator enables users to:
+
+Visualize how colors spread from the selected starting cell.
+Understand how neighboring cells are explored recursively or iteratively.
+Interactively observe the filling process step-by-step or automatically.
+Receive real-time visualization of region expansion.
+Learn how graph traversal techniques solve image filling problems.
+
+This is ideal for learners exploring graph traversal algorithms, image processing concepts, game development, and paint applications.
+
+Theory:-
+
+Definition: Flood Fill is a graph traversal algorithm used to replace a target color or value in a connected region with a new color by visiting all adjacent cells that share the same original color.
+
+Working Principle: The algorithm begins from a selected starting cell. It checks whether the current cell has the target color. If it does, the cell is updated with the new color, and the algorithm recursively or iteratively visits all valid neighboring cells (up, down, left, and right). This process continues until all connected cells with the original color have been filled.
+
+Precondition: The starting cell must belong to the region that needs to be filled, and the replacement color should be different from the existing color.
+
+Advantages:
+
+Simple and easy to implement.
+Efficient for filling connected regions.
+Widely used in graphics editors, paint applications, and game development.
+Can be implemented using either DFS or BFS traversal.
+
+Disadvantages:
+
+Recursive DFS may cause stack overflow for very large grids.
+Requires additional memory for recursion stack or queue.
+Performance depends on the size of the connected region.
+
+Time Complexity: O(M × N), where M and N represent the number of rows and columns in the grid.
+
+Space Complexity: O(M × N) in the worst case due to recursion stack or BFS queue.

@@ -1,0 +1,39 @@
+Aim :-
+
+The aim of this visualization is to help learners understand the working of the Container With Most Water algorithm using the efficient Two Pointer (Greedy) approach through intuitive animations and interactive control.
+
+This simulator enables users to:
+
+Visualize how the left and right pointers move towards each other.
+Understand how the container area is calculated using height and width.
+Observe why the shorter line is moved at each step to maximize the possible area.
+Interactively control each iteration and trace pointer movements.
+Receive audio feedback and real-time updates on the maximum area found.
+Learn how the greedy two-pointer strategy reduces the time complexity from O(n²) to O(n).
+
+This is ideal for learners exploring greedy algorithms, two-pointer techniques, and optimization problems in Data Structures and Algorithms.
+
+Theory:-
+
+Definition: Container With Most Water is a classic optimization problem where the objective is to find two vertical lines that, together with the x-axis, form a container capable of holding the maximum amount of water.
+
+Working Principle: The algorithm starts with two pointers placed at the leftmost and rightmost ends of the array. At each step, it calculates the area formed by the two lines and updates the maximum area if a larger one is found. Since the area is limited by the shorter line, the pointer pointing to the shorter height is moved inward in search of a potentially larger area.
+
+Precondition: The input must be a valid array of non-negative integers representing the heights of vertical lines.
+
+Advantages:
+
+Finds the maximum container area in a single traversal.
+Uses the efficient two-pointer greedy strategy.
+Significantly faster than the brute-force approach.
+Requires only constant extra memory.
+
+Disadvantages:
+
+Applicable only to problems that satisfy the greedy strategy.
+Does not calculate water trapped between bars (different from the Trapping Rain Water problem).
+Requires understanding of the two-pointer optimization technique.
+
+Time Complexity: O(n)
+
+Space Complexity: O(1)

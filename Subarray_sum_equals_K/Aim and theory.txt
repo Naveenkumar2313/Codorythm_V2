@@ -1,0 +1,38 @@
+Aim :-
+
+The aim of this visualization is to help learners understand the working of the Subarray Sum Equals K algorithm using intuitive animations and interactive control.
+
+This simulator enables users to:
+
+Visualize how the array is traversed while maintaining the cumulative (prefix) sum.
+Identify how previously encountered prefix sums help in finding subarrays whose sum equals the target value K.
+Interactively control each step and trace the formation of valid subarrays.
+Receive audio feedback and real-time updates on the current prefix sum, hash map, and search status.
+Learn how the Prefix Sum and Hash Map approach achieves O(n) efficiency compared to the brute-force method.
+
+This is ideal for learners exploring array-based algorithms, prefix sums, hash maps, and optimized problem-solving techniques commonly used in Data Structures and Algorithms.
+
+Theory:-
+
+Definition: Subarray Sum Equals K is an efficient algorithm used to determine the total number of contiguous subarrays whose sum is exactly equal to a given target value K.
+
+Working Principle: The algorithm traverses the array while maintaining a running prefix sum. At each step, it checks whether the value (current prefix sum − K) has been encountered previously. If it exists, each occurrence represents a valid subarray ending at the current index. A hash map is used to store the frequency of prefix sums, allowing constant-time lookups.
+
+Precondition: The input consists of a one-dimensional array of integers, and the array may contain positive numbers, negative numbers, or zeros.
+
+Advantages:
+
+Efficiently finds all contiguous subarrays with sum equal to K.
+Works correctly for arrays containing positive, negative, and zero values.
+Runs in linear time, making it suitable for large datasets.
+Uses a hash map to achieve fast prefix sum lookups.
+
+Disadvantages:
+
+Requires additional memory to store prefix sum frequencies.
+Slightly more difficult to understand than the brute-force approach for beginners.
+Traditional sliding window techniques cannot solve this problem when negative numbers are present.
+
+Time Complexity: O(n)
+
+Space Complexity: O(n)

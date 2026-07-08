@@ -1,0 +1,37 @@
+Aim:-
+
+The aim of this visualization is to help learners understand the working of the Matrix Chain Multiplication (MCM) algorithm using Dynamic Programming through intuitive animations and interactive control.
+
+This simulator enables users to:
+
+Visualize how a chain of matrices is divided into different subproblems.
+Understand how different parenthesizations affect the total number of scalar multiplications.
+Observe how the Dynamic Programming table is filled step by step.
+Interactively trace the optimal split points and the construction of the final solution.
+Receive real-time updates showing intermediate costs and the minimum multiplication cost.
+Learn how Dynamic Programming eliminates redundant calculations by storing previously computed results.
+
+This visualization is ideal for learners exploring Dynamic Programming, optimization problems, and efficient matrix multiplication strategies.
+
+Theory:-
+Definition:Matrix Chain Multiplication (MCM) is a classic Dynamic Programming optimization problem that determines the most efficient way to multiply a sequence of matrices by minimizing the total number of scalar multiplications. The order of multiplication is changed without altering the final result.
+
+Working Principle:The algorithm recursively considers every possible position to split the matrix chain into two smaller subproblems. It computes the multiplication cost for each possible split, stores the minimum cost in a Dynamic Programming table, and reuses previously computed results to avoid redundant calculations.
+
+Precondition:
+The matrices must have compatible dimensions for multiplication.
+The dimensions are represented as an array where the iᵗʰ matrix has dimensions arr[i−1] × arr[i].
+The order of matrices in the chain cannot be changed; only the parenthesization can be varied.
+Advantages:
+Finds the optimal multiplication order with the minimum computational cost.
+Demonstrates the power of Dynamic Programming through overlapping subproblems and optimal substructure.
+Significantly reduces computations compared to the naive recursive approach.
+Applicable in compiler optimization, database query optimization, and scientific computing.
+Disadvantages:
+Requires additional memory to store the Dynamic Programming table.
+Does not perform the actual matrix multiplication; it only computes the optimal multiplication order.
+Becomes computationally expensive for extremely large matrix chains despite optimization.
+
+Time Complexity:O(n³)
+
+Space Complexity:O(n²)

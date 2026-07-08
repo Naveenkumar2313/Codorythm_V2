@@ -1,0 +1,42 @@
+Aim :-
+
+The aim of this visualization is to help learners understand how the Binary Tree Right Side View algorithm identifies the nodes visible when a binary tree is viewed from its right side using intuitive animations and interactive controls.
+
+This simulator enables users to:
+
+Visualize level-by-level traversal of the binary tree.
+Observe how the rightmost node of each level is selected.
+Understand the working of Breadth-First Search (BFS) or Depth-First Search (DFS) approaches.
+Interactively step through each traversal and trace visited nodes.
+Receive real-time updates on the current level, visited nodes, and right-side view.
+Learn how tree traversal techniques efficiently solve visibility-based problems.
+
+This visualization is ideal for learners exploring binary tree traversals, level-order processing, and interview-oriented tree algorithms.
+
+Theory :-
+
+Definition:Binary Tree Right Side View is a tree traversal problem where the objective is to determine the set of nodes visible when looking at a binary tree from its right side. At every level of the tree, only the rightmost node is included in the final result.
+
+Working Principle:The algorithm traverses the tree level by level using Breadth-First Search (Level Order Traversal) or recursively using Depth-First Search (Right-First Traversal).
+
+BFS Approach: Visit every level from left to right (or right to left) and record the last node encountered at each level.
+DFS Approach: Traverse the right subtree before the left subtree. Whenever a new depth is reached for the first time, record that node as part of the right-side view.
+
+Precondition:
+The input must be a valid binary tree.
+The tree may be empty, balanced, skewed, or incomplete.
+Advantages
+Efficiently identifies visible nodes without unnecessary computations.
+Demonstrates practical use of tree traversal algorithms.
+Works for all types of binary trees.
+Can be implemented using either BFS or DFS depending on the requirement.
+Disadvantages
+Requires additional memory for queue (BFS) or recursion stack (DFS).
+Traverses all nodes even though only one node per level appears in the final output.
+
+Time Complexity : O(n)
+(Each node is visited exactly once.)
+
+Space Complexity :
+O(n) for BFS (queue in the worst case).
+O(h) for DFS, where h is the height of the tree (recursion stack)

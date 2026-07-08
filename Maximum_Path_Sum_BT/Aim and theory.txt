@@ -1,0 +1,58 @@
+Aim:-The aim of this visualization is to help learners understand how the Maximum Path Sum in Binary Tree algorithm finds the highest possible sum of values along any valid path in a binary tree using Depth-First Search (DFS) and recursion.
+
+This simulator enables users to:
+
+Visualize the recursive traversal of each node in the binary tree.
+Observe how the algorithm computes the maximum gain from the left and right subtrees.
+Understand how the global maximum path sum is updated at every node.
+Interactively trace recursion calls, returns, and path calculations.
+Receive real-time updates and audio feedback while the algorithm processes each node.
+Learn why the algorithm efficiently solves the problem in linear time using post-order traversal.
+
+This visualization is ideal for learners exploring binary trees, recursion, depth-first search, and dynamic programming concepts on trees.
+
+Theory:-
+
+Definition:Maximum Path Sum in Binary Tree is a binary tree algorithm that determines the maximum possible sum of node values along any valid path in the tree. A path can begin and end at any nodes, but each node can be visited only once.
+
+Working Principle:The algorithm performs a post-order Depth-First Search (DFS). At every node, it calculates the maximum contribution (gain) from its left and right children.
+
+Negative contributions are ignored by treating them as zero. The algorithm then computes the path passing through the current node:
+
+Current Path Sum = Node Value + Left Gain + Right Gain
+
+If this value is greater than the current global maximum, it updates the answer.
+
+Finally, the function returns:
+
+Node Value + max(Left Gain, Right Gain)
+
+so that the parent node can continue forming a valid path.
+
+Precondition:
+The input must be a valid binary tree.
+Each node contains an integer value (positive, negative, or zero).
+The tree may be balanced or unbalanced.
+Advantages:
+Efficiently computes the maximum path sum in a single traversal.
+Handles trees containing both positive and negative values.
+Uses recursion to simplify traversal and path calculations.
+Suitable for large binary trees due to its linear time complexity.
+Disadvantages:
+Recursive implementation consumes stack space proportional to the tree height.
+Deeply skewed trees may lead to stack overflow in environments with limited recursion depth.
+Requires careful handling of negative path sums.
+Time Complexity:
+
+O(n)
+
+where n is the number of nodes in the binary tree, since every node is visited exactly once.
+
+Space Complexity:
+
+O(h)
+
+where h is the height of the binary tree due to the recursion stack.
+
+Best Case (Balanced Tree): O(log n)
+Worst Case (Skewed Tree): O(n)

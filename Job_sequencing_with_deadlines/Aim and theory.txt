@@ -1,0 +1,39 @@
+Aim :-
+
+The aim of this visualization is to help learners understand the working of the Job Sequencing with Deadlines algorithm using intuitive animations and interactive control.
+
+This simulator enables users to:
+
+Visualize how jobs are selected based on maximum profit and assigned within their deadlines.
+Understand how the greedy strategy chooses the most profitable job first.
+Observe the allocation of jobs into available time slots step by step.
+Interactively control the execution and trace the scheduling process.
+Receive real-time updates on selected jobs, skipped jobs, total profit, and occupied slots.
+Learn how greedy decision-making maximizes overall profit while satisfying deadline constraints.
+
+This is ideal for learners exploring greedy algorithms and optimization problems involving scheduling and resource allocation.
+
+Theory:-
+
+Definition: Job Sequencing with Deadlines is a Greedy algorithm that schedules jobs, each having a deadline and profit, in such a way that the maximum possible profit is earned while ensuring that no two jobs are executed at the same time.
+
+Working Principle: The algorithm first sorts all jobs in descending order of profit. It then schedules each job in the latest available time slot before or on its deadline. If no suitable slot is available, the job is skipped.
+
+Precondition: Each job requires exactly one unit of time, has a valid deadline, and only one job can be executed in a single time slot.
+
+Advantages:
+
+Maximizes total profit using a simple greedy approach.
+Efficient for scheduling independent jobs with deadlines.
+Easy to implement and understand.
+Produces an optimal solution for the classic Job Sequencing with Deadlines problem.
+
+Disadvantages:
+
+Assumes each job takes the same amount of execution time.
+Not suitable when jobs have dependencies or varying durations.
+May not work for more complex scheduling constraints.
+
+Time Complexity: O(n log n + n × d), where n is the number of jobs and d is the maximum deadline. (With efficient data structures like Disjoint Set Union, it can be optimized further.)
+
+Space Complexity: O(d), where d is the maximum deadline used for storing available time slots.

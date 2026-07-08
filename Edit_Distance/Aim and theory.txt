@@ -1,0 +1,62 @@
+Aim :-The aim of this visualization is to help learners understand how the Edit Distance (Levenshtein Distance) algorithm uses Dynamic Programming to calculate the minimum number of operations required to transform one string into another.
+
+This simulator enables users to:
+
+Visualize the Dynamic Programming table being filled step by step.
+Observe how insertion, deletion, and replacement operations contribute to the solution.
+Understand how previously computed subproblems are reused to avoid redundant calculations.
+Interactively trace the optimal sequence of edits between two strings.
+Receive real-time updates and explanations for each DP cell computation.
+Learn how Dynamic Programming optimizes the edit distance problem efficiently.
+
+This visualization is ideal for learners exploring Dynamic Programming, string algorithms, spell checking, DNA sequence comparison, and text similarity problems.
+
+Theory:-
+
+Definition:Edit Distance (Levenshtein Distance) is a Dynamic Programming algorithm that determines the minimum number of single-character operations required to convert one string into another.
+
+The allowed operations are:
+
+Insertion of a character
+Deletion of a character
+Replacement (Substitution) of a character
+Working Principle:
+
+The algorithm constructs a Dynamic Programming (DP) table where each cell represents the minimum edit distance between prefixes of the two input strings.
+
+For each character pair:
+
+If the characters are the same, no additional operation is needed, and the value is copied from the diagonal cell.
+If the characters are different, the algorithm considers:
+Insertion
+Deletion
+Replacement
+
+The minimum cost among these three operations is selected and incremented by one.
+
+The value in the bottom-right cell of the DP table gives the final minimum edit distance.
+
+Precondition:
+Two input strings must be provided.
+The algorithm works for strings of any length, including empty strings.
+Dynamic Programming table must be initialized correctly with base cases.
+
+Advantages:
+Guarantees the minimum number of edit operations.
+Efficiently solves overlapping subproblems using Dynamic Programming.
+Widely used in spell checkers, plagiarism detection, DNA sequence analysis, and natural language processing.
+Avoids redundant computations compared to a recursive solution.
+
+Disadvantages:
+Requires additional memory proportional to the lengths of the input strings.
+Can become computationally expensive for very long strings.
+Standard implementation only computes the edit distance, not semantic similarity.
+
+Time Complexity:O(m × n)
+where:
+m = length of the first string
+n = length of the second string
+
+Space Complexity:O(m × n) for the standard Dynamic Programming implementation.
+
+O(min(m, n)) using the space-optimized version that stores only two rows of the DP table
