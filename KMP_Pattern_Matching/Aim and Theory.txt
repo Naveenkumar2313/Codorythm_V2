@@ -1,0 +1,162 @@
+Aim
+
+The aim of this visualization is to help learners understand how the KMP Pattern Matching algorithm searches for a pattern inside a text efficiently by avoiding unnecessary rechecking of characters.
+
+This simulator enables users to:
+
+Visualize how the pattern is compared with the text.
+Understand how the LPS array stores useful prefix and suffix information.
+Observe how mismatches are handled without moving the text pointer backward.
+Compare KMP with the naive pattern matching approach.
+Learn how preprocessing improves string searching performance.
+
+This is ideal for learners exploring string algorithms, pattern matching, and efficient text processing techniques.
+
+Definition
+
+KMP Pattern Matching, also known as the Knuth-Morris-Pratt algorithm, is an efficient string searching algorithm used to find all occurrences of a pattern in a given text. It uses a preprocessing array called the LPS array to skip comparisons that are already known to be unnecessary.
+
+Theory
+
+Pattern matching is the process of finding whether a smaller string, called the pattern, appears inside a larger string, called the text.
+
+The naive approach compares the pattern with the text from every possible starting position. When a mismatch occurs, it shifts the pattern by one position and starts comparing again. This can repeat many comparisons, especially when the text and pattern contain repeated characters.
+
+KMP improves this process by using information from the pattern itself. Before searching, it builds the LPS array.
+
+LPS stands for Longest Proper Prefix which is also Suffix.
+
+A proper prefix is a prefix that is not equal to the entire string. A suffix is a substring that appears at the end of the string. For each position in the pattern, the LPS value tells the length of the longest proper prefix of the pattern substring that is also a suffix.
+
+This information helps the algorithm decide how far the pattern can be shifted after a mismatch. Instead of restarting the comparison from the beginning, KMP continues from the best valid position in the pattern.
+
+For example, if part of the pattern has already matched, the LPS value tells how much of that matched part can still be reused.
+
+Working Principle
+
+The algorithm works in two main phases:
+
+1. Build the LPS array for the pattern.
+2. Use the LPS array to search the pattern in the text.
+
+During LPS construction:
+
+1. Start with the first character of the pattern.
+2. Compare the current character with the character at the current prefix length.
+3. If they match, increase the prefix length and store it in the LPS array.
+4. If they do not match, use the previous LPS value to reduce the prefix length.
+5. Continue until the LPS value is computed for every pattern position.
+
+During pattern searching:
+
+1. Use one pointer for the text and one pointer for the pattern.
+2. If the current characters match, move both pointers forward.
+3. If the pattern pointer reaches the end, a full match is found.
+4. After a match, use the LPS array to continue searching for more occurrences.
+5. If a mismatch occurs and the pattern pointer is not at the beginning, move the pattern pointer using the LPS array.
+6. If a mismatch occurs at the beginning of the pattern, move the text pointer forward.
+
+The key idea is that the text pointer never moves backward. This makes the search efficient.
+
+Advantages
+
+Searches the text in linear time.
+Avoids repeated comparisons made by the naive approach.
+Works well for large texts and repeated patterns.
+Finds all occurrences of a pattern efficiently.
+Does not require sorting or modifying the input strings.
+Useful for many practical string processing tasks.
+
+Disadvantages
+
+Requires extra space for the LPS array.
+The LPS construction can be difficult for beginners to understand.
+Implementation is more complex than naive pattern matching.
+Less useful for very small inputs where the naive approach is already simple and fast enough.
+Designed for exact matching, not approximate or fuzzy matching.
+
+Applications
+
+Searching for a substring inside a larger string.
+Finding all occurrences of a pattern in text.
+Text editors and document search tools.
+Plagiarism detection systems for exact phrase matching.
+DNA sequence matching.
+Log analysis and keyword scanning.
+Compiler design and lexical analysis.
+
+Real Life Applications
+
+Searching for a word in a document.
+Finding a phrase inside a web page.
+Detecting repeated patterns in biological sequences.
+Scanning logs for error codes or fixed messages.
+Matching commands, tokens, or keywords in programming tools.
+Filtering messages that contain specific exact patterns.
+
+Time Complexity
+
+O(n + m)
+
+Here, n is the length of the text and m is the length of the pattern.
+
+Building the LPS array takes O(m) time.
+Searching the pattern in the text takes O(n) time.
+
+Therefore, the total time complexity is O(n + m).
+
+Space Complexity
+
+O(m)
+
+The algorithm stores the LPS array for the pattern, where m is the length of the pattern.
+
+Apart from the LPS array and a few variables, no additional large memory is required.
+
+Stable / Not Stable
+
+Not applicable as a sorting stability concept because KMP Pattern Matching is not a sorting algorithm.
+
+The algorithm does not rearrange elements. It scans the text and pattern to find exact matches.
+
+In-place / Not In-place
+
+Not in-place in the strict sense because it uses an additional LPS array of size m.
+
+However, KMP does not modify the original text or pattern. It only reads them and stores preprocessing information separately.
+
+Prerequisites
+
+Basic understanding of strings.
+Knowledge of arrays and indexing.
+Understanding of prefixes and suffixes.
+Ability to use loops and conditional statements.
+Basic understanding of substring matching.
+
+Common Mistakes
+
+Confusing a proper prefix with the entire string.
+Building the LPS array incorrectly after a mismatch.
+Moving the text pointer backward during search.
+Resetting the pattern pointer to zero after every mismatch.
+Forgetting to use the LPS value after finding a full match.
+Not handling an empty pattern or pattern longer than the text.
+Using incorrect indexes while comparing text and pattern characters.
+
+When to Use
+
+Use KMP Pattern Matching when exact pattern search is required.
+Use it when the text is large and repeated comparisons should be avoided.
+Use it when all occurrences of a pattern need to be found.
+Use it when the pattern contains repeated prefixes and suffixes.
+Use it when a guaranteed O(n + m) string matching solution is needed.
+
+When Not to Use
+
+Do not use KMP when approximate or fuzzy matching is required.
+Do not use it when regular expression matching is needed.
+Do not use it when the input is very small and a simple naive search is sufficient.
+Do not use it when the pattern changes frequently and preprocessing cost becomes unnecessary.
+Do not use it for problems that require semantic meaning rather than exact character matching.
+
+For more information visit Codorythm platform.

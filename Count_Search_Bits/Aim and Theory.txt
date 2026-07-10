@@ -1,0 +1,73 @@
+Aim :-
+
+The aim of this visualization is to help learners understand how Brian Kernighan's Algorithm efficiently counts the number of set bits (1s) in the binary representation of an integer using bitwise operations.
+
+This simulator enables users to:
+
+Visualize how each iteration removes the rightmost set bit.
+Understand the working of the expression n & (n - 1).
+Observe how the number of iterations depends only on the number of set bits.
+Compare the efficiency of Brian Kernighan's Algorithm with the naive bit-counting approach.
+Learn how bit manipulation techniques improve algorithm performance.
+
+This is ideal for learners exploring bit manipulation, optimization techniques, and efficient algorithm design.
+
+Theory:-
+
+Definition:
+
+Brian Kernighan's Algorithm is an efficient bit manipulation algorithm used to count the number of set bits (1s) present in the binary representation of an integer.
+
+Working Principle:
+
+The algorithm repeatedly performs the operation n = n & (n - 1). This operation removes the rightmost set bit from the number during every iteration. The process continues until the number becomes zero. The number of iterations performed is equal to the number of set bits.
+
+Example:
+
+Input: 13
+
+Binary Representation:
+1101
+
+Iteration 1:
+1101 & 1100 = 1100
+
+Iteration 2:
+1100 & 1011 = 1000
+
+Iteration 3:
+1000 & 0111 = 0000
+
+Number of iterations = 3
+
+Therefore, the number of set bits is 3.
+
+Precondition:
+
+The input should be a valid integer. The algorithm works for both positive and negative integers depending on the programming language's integer representation, but it is commonly used with non-negative integers.
+
+Advantages:
+
+Efficient because it performs only one iteration for each set bit.
+Faster than checking every bit individually when the number contains few set bits.
+Uses simple bitwise operations.
+Widely used in competitive programming and system-level programming.
+
+Disadvantages:
+
+Requires understanding of bitwise operators.
+Less intuitive than the straightforward bit-by-bit counting approach.
+Behavior for negative numbers may differ across programming languages because of different binary representations.
+
+Time Complexity:
+
+O(k)
+
+where k is the number of set bits in the integer.
+
+Worst Case:
+O(log n)
+
+Space Complexity:
+
+O(1)

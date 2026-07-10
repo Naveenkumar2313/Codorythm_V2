@@ -1,0 +1,153 @@
+Aim
+
+The aim of this visualization is to help learners understand how Maximum XOR via Trie finds the largest XOR value that can be formed by choosing two numbers from an array.
+
+This simulator enables users to:
+
+Visualize how numbers are stored bit by bit in a binary trie.
+Understand why opposite bits help maximize XOR.
+Observe how each number searches for the best possible partner in the trie.
+Compare trie-based searching with the brute force pair checking approach.
+Learn how bit manipulation and trie traversal work together for optimization.
+
+This is ideal for learners exploring bit manipulation, binary tries, and efficient pair selection problems.
+
+Definition
+
+Maximum XOR via Trie is an algorithmic technique used to find the maximum XOR value between any two numbers in an array by storing binary representations of numbers in a trie.
+
+A trie used for this problem is a binary tree-like structure where each edge represents a bit, either 0 or 1.
+
+Theory
+
+XOR is a bitwise operation that gives 1 when two compared bits are different and 0 when they are the same.
+
+To maximize the XOR value of two numbers, the algorithm tries to make the most significant bits of the result as large as possible. Since higher bits contribute more to the final value, choosing an opposite bit at a higher position is more valuable than choosing an opposite bit at a lower position.
+
+For example:
+
+0 XOR 1 = 1
+1 XOR 0 = 1
+0 XOR 0 = 0
+1 XOR 1 = 0
+
+A binary trie stores each number from its most significant bit to its least significant bit. During search, for every bit of the current number, the algorithm tries to move to the opposite bit in the trie. If the opposite bit exists, it contributes 1 to the XOR result at that position. If it does not exist, the algorithm follows the same bit.
+
+This greedy choice works because bits are processed from highest to lowest. Maximizing an earlier bit always has greater impact on the final XOR value.
+
+Working Principle
+
+The algorithm follows these steps:
+
+1. Create an empty binary trie.
+2. Insert the binary representation of the first number into the trie.
+3. For every next number, search the trie for the number that gives the best XOR with it.
+4. At each bit position, prefer the opposite bit if it exists.
+5. Add the value of that bit to the current XOR result when an opposite bit is chosen.
+6. Update the maximum XOR value found so far.
+7. Insert the current number into the trie.
+8. Continue until all numbers have been processed.
+
+The trie allows each number to find its best possible partner in fixed bit-length time instead of comparing with every previous number.
+
+Advantages
+
+Much faster than the brute force O(n^2) approach for large arrays.
+Uses bitwise properties directly to maximize the XOR value.
+Processes each number in a predictable number of bit operations.
+Works well when numbers are non-negative integers with a fixed bit length.
+Provides a clear connection between tries and bit manipulation.
+Can be adapted for related XOR query problems.
+
+Disadvantages
+
+Requires extra memory to store trie nodes.
+Implementation is more complex than brute force.
+Careful handling of bit positions is required.
+Negative numbers need special handling because of signed binary representation.
+The trie may contain many nodes when many numbers differ across bit positions.
+
+Applications
+
+Finding the maximum XOR pair in an array.
+Solving bit manipulation optimization problems.
+Answering XOR queries efficiently.
+Building binary trie based search structures.
+Competitive programming and coding interview problems.
+Network, masking, and binary data analysis tasks.
+
+Real Life Applications
+
+Analyzing binary identifiers for maximum difference.
+Optimizing comparisons of encoded numeric values.
+Working with IP-like binary prefixes and masks.
+Studying data diversity using bitwise difference.
+Designing educational tools for bitwise trie traversal.
+Processing integer keys in systems that rely on binary representation.
+
+Time Complexity
+
+O(n * B)
+
+Here, n is the number of elements in the array and B is the number of bits considered for each number.
+
+Each number is inserted into the trie in O(B) time. Each search for the best XOR partner also takes O(B) time.
+
+For fixed-width integers, B is usually treated as a constant, such as 31 or 32, so the practical running time is close to O(n).
+
+Space Complexity
+
+O(n * B)
+
+In the worst case, each inserted number may create new trie nodes for many bit positions.
+
+For fixed-width integers, this is often treated as O(n), but the full expression is O(n * B).
+
+Stable / Not Stable
+
+Not applicable as a sorting stability concept because Maximum XOR via Trie is not a sorting algorithm.
+
+The algorithm does not reorder equal elements for sorting. It stores bit paths and searches for the best XOR partner.
+
+In-place / Not In-place
+
+Not in-place because the algorithm builds an additional binary trie to store the bit representation of numbers.
+
+The input array itself does not need to be modified, but extra memory is required for trie nodes.
+
+Prerequisites
+
+Basic understanding of arrays.
+Knowledge of binary representation of integers.
+Understanding of bitwise XOR operation.
+Understanding of trie data structure basics.
+Ability to use loops and conditional statements.
+Familiarity with most significant bit to least significant bit traversal.
+
+Common Mistakes
+
+Trying to maximize lower bits before higher bits.
+Forgetting that opposite bits produce 1 in XOR.
+Using too few bit positions for the given constraints.
+Not handling arrays with fewer than two elements.
+Mixing signed and unsigned behavior when negative numbers are present.
+Inserting and searching inconsistently across different bit lengths.
+Assuming brute force is acceptable for large input sizes.
+
+When to Use
+
+Use Maximum XOR via Trie when the maximum XOR of any two non-negative integers is required.
+Use it when the input size is large enough that O(n^2) brute force is too slow.
+Use it when numbers can be represented using a known fixed bit length.
+Use it when efficient XOR partner lookup is needed.
+Use it for learning advanced applications of tries with bit manipulation.
+
+When Not to Use
+
+Do not use it when the input is very small and brute force is simpler.
+Do not use it when the problem does not involve bitwise XOR.
+Do not use it without adjustment when negative numbers must be supported.
+Do not use it when memory is extremely limited and trie storage is not acceptable.
+Do not use it when only a single XOR operation between two known numbers is required.
+
+For more information visit Codorythm platform.

@@ -1,4 +1,4 @@
-Aim :- 
+ Aim :- 
 
 The aim of this visualization is to help learners understand the working of the Binary Search algorithm on a sorted array using intuitive animations and interactive control.
 

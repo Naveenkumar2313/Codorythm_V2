@@ -1,0 +1,64 @@
+Aim:-
+
+The aim of this visualization is to help learners understand the Binary Search on Answer technique, an optimization strategy used to solve problems where the answer lies within a searchable range.
+
+This simulator enables users to:
+
+• Understand how binary search can be applied to the answer instead of searching an array.
+• Learn how to identify the search space for optimization problems.
+• Visualize how the answer range is reduced after every iteration.
+• Understand the importance of feasibility (validation) functions.
+• Observe how Binary Search on Answer efficiently finds the optimal solution.
+• Develop problem-solving skills for interview and competitive programming questions.
+
+This visualization is ideal for learners exploring advanced applications of binary search beyond searching sorted arrays.
+
+Theory:-
+
+Definition:
+
+Binary Search on Answer is an optimization technique where binary search is performed on the range of possible answers instead of directly searching through data. It is commonly used when the problem asks for the minimum or maximum possible value that satisfies a given condition.
+
+Working Principle:
+
+Instead of searching for an element, Binary Search on Answer searches for the correct answer within a defined range.
+
+The algorithm follows these steps:
+
+1. Identify the minimum possible answer.
+2. Identify the maximum possible answer.
+3. Calculate the middle value.
+4. Check whether the middle value satisfies the given condition using a feasibility function.
+5. If the condition is satisfied, search the smaller half to find a better answer.
+6. Otherwise, search the larger half.
+7. Continue until the optimal answer is found.
+
+The feasibility function is the most important part of this technique. It determines whether a candidate answer is valid and guides the binary search toward the optimal solution.
+
+Advantages:
+
+• Reduces the search space significantly.
+• Efficient for optimization problems.
+• Can solve many problems that are difficult using brute force.
+• Works well with monotonic conditions.
+• Commonly used in coding interviews and competitive programming.
+
+Disadvantages:
+
+• Applicable only when the search space is monotonic.
+• Finding the correct search boundaries may be difficult.
+• Requires designing an efficient feasibility function.
+• Not suitable for every optimization problem.
+
+
+Time Complexity:
+
+O(log Answer Range × Feasibility Function)
+
+The binary search performs O(log Answer Range) iterations, while each iteration executes the feasibility function.
+
+Space Complexity:
+
+O(1)
+
+Only a constant amount of additional memory is required in most implementations.

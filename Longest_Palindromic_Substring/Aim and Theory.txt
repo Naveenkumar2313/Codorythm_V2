@@ -1,0 +1,151 @@
+Aim
+
+The aim of this visualization is to help learners understand how the Longest Palindromic Substring algorithm finds the longest continuous part of a string that reads the same forward and backward.
+
+This simulator enables users to:
+
+Visualize how palindromes expand around possible centers.
+Understand the difference between odd-length and even-length palindromes.
+Observe how the longest valid palindrome is updated during the scan.
+Compare center expansion with brute force substring checking.
+Learn how careful boundary checks avoid invalid string access.
+
+This is ideal for learners exploring string algorithms, palindrome properties, and efficient substring processing.
+
+Definition
+
+Longest Palindromic Substring is a string algorithm problem where the goal is to find the longest contiguous substring of a given string that is a palindrome.
+
+A palindrome is a sequence of characters that reads the same from left to right and from right to left.
+
+Theory
+
+A substring is a continuous part of a string. For example, in the string "babad", both "bab" and "aba" are palindromic substrings.
+
+The naive approach checks every possible substring and verifies whether it is a palindrome. Since there can be O(n^2) substrings and each check can take O(n) time, the brute force method may take O(n^3) time.
+
+A better beginner-friendly approach is the expand around center technique.
+
+Every palindrome has a center. The center can be:
+
+One character for odd-length palindromes.
+Two adjacent characters for even-length palindromes.
+
+For each position in the string, the algorithm expands outward while the left and right characters are equal. During this expansion, it tracks the longest palindrome found so far.
+
+For example, in the string "racecar", the center is the character "e". Expanding around it gives "cec", then "aceca", and finally "racecar".
+
+Working Principle
+
+The algorithm follows these steps:
+
+1. If the string is empty, return an empty string.
+2. Initialize the best starting index and maximum length.
+3. For every index in the string, treat it as the center of an odd-length palindrome.
+4. Expand left and right while both characters are equal.
+5. Also treat the current index and the next index as the center of an even-length palindrome.
+6. Expand again for the even-length case.
+7. After each expansion, update the best starting index and maximum length if a longer palindrome is found.
+8. Return the substring using the best starting index and maximum length.
+
+The key idea is that every possible palindrome is discovered by expanding from its center.
+
+Advantages
+
+Simple to understand and implement.
+Works for both odd-length and even-length palindromes.
+More efficient than checking every substring separately.
+Uses only a few variables apart from the output substring.
+Does not require sorting or changing the input string.
+Good for learning string boundaries and two-pointer expansion.
+
+Disadvantages
+
+The expand around center approach still takes O(n^2) time in the worst case.
+It may not be optimal for extremely large strings.
+Careful boundary handling is required.
+Multiple valid answers may exist when two palindromes have the same maximum length.
+More advanced algorithms such as Manacher's Algorithm are faster but harder to understand.
+
+Applications
+
+Finding palindromic patterns in text.
+String processing and text analysis.
+Interview and competitive programming problems.
+Detecting symmetric sequences.
+Preprocessing for advanced palindrome-related problems.
+Learning two-pointer expansion techniques.
+
+Real Life Applications
+
+Finding symmetric words or phrases in text tools.
+Analyzing DNA or biological sequences for repeated symmetry.
+Detecting palindromic identifiers or codes.
+Building text editors that highlight special string patterns.
+Checking meaningful mirrored patterns in data streams.
+Creating educational visualizations for string algorithms.
+
+Time Complexity
+
+O(n^2)
+
+There are n possible centers for odd-length palindromes and n possible centers for even-length palindromes. In the worst case, each expansion can scan many characters.
+
+Therefore, the total time complexity of the expand around center approach is O(n^2).
+
+Space Complexity
+
+O(1) auxiliary space
+
+The algorithm uses only a few variables to track indexes and lengths.
+
+If the returned substring is counted as new output storage, the output can take O(n) space in the worst case.
+
+Stable / Not Stable
+
+Not applicable as a sorting stability concept because Longest Palindromic Substring is not a sorting algorithm.
+
+The algorithm does not reorder characters. It only identifies a substring from the original string.
+
+In-place / Not In-place
+
+The algorithm is in-place with respect to the input because it does not modify the original string and uses constant auxiliary space.
+
+If a separate substring object is created for the answer, that returned output requires additional memory proportional to the palindrome length.
+
+Prerequisites
+
+Basic understanding of strings.
+Knowledge of substrings and indexes.
+Understanding of palindrome properties.
+Ability to use loops and conditional statements.
+Basic understanding of two-pointer expansion.
+Careful handling of string boundaries.
+
+Common Mistakes
+
+Checking only odd-length palindromes and missing even-length palindromes.
+Using subsequence logic instead of substring logic.
+Forgetting to stop expansion when indexes move outside the string.
+Updating the longest palindrome length incorrectly.
+Returning only the length when the substring is required.
+Assuming there is always only one correct answer.
+Using brute force when the input size requires a better approach.
+
+When to Use
+
+Use this algorithm when the longest continuous palindromic part of a string is required.
+Use it when a clear and practical O(n^2) solution is acceptable.
+Use it when both odd-length and even-length palindromes must be considered.
+Use it when learning palindrome expansion techniques.
+Use it when the input size is moderate and readability matters.
+
+When Not to Use
+
+Do not use this approach when the input is extremely large and O(n^2) time is too slow.
+Do not use it when the problem asks for a palindromic subsequence instead of a substring.
+Do not use it when all palindromic substrings must be counted unless the implementation is adapted.
+Do not use it when an O(n) solution such as Manacher's Algorithm is specifically required.
+Do not use it for problems that need approximate matching rather than exact palindrome matching.
+
+For more information visit Codorythm platform.

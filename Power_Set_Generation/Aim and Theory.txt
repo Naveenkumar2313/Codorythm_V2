@@ -1,0 +1,158 @@
+Aim
+
+The aim of this visualization is to help learners understand how Power Set Generation via Bitmask creates every possible subset of a given set by using binary numbers to represent element selection.
+
+This simulator enables users to:
+
+Visualize how each bit in a mask represents whether an element is included or excluded.
+Understand why a set with n elements has 2^n possible subsets.
+Observe how masks from 0 to 2^n - 1 generate all subsets.
+Learn how bitwise operations can simplify subset generation.
+Build a strong foundation for problems involving combinations, enumeration, and exhaustive search.
+
+This is ideal for learners exploring bit manipulation, subset generation, and brute force techniques with clear binary reasoning.
+
+Definition
+
+Power Set Generation via Bitmask is a bit manipulation technique used to generate all subsets of a set. Each subset is represented by a binary mask, where every bit indicates whether the corresponding element is selected.
+
+Theory
+
+The power set of a set is the collection of all possible subsets, including the empty subset and the set itself.
+
+For a set containing n elements, each element has two choices:
+
+It can be included in a subset.
+It can be excluded from a subset.
+
+Because each of the n elements has two independent choices, the total number of subsets is 2^n.
+
+Bitmasking uses the binary representation of numbers to model these choices. A mask is an integer whose binary bits correspond to positions in the input set. If the bit at position i is 1, the element at index i is included in the current subset. If the bit is 0, the element is excluded.
+
+For example, for the set [A, B, C]:
+
+Mask 000 represents []
+Mask 001 represents [A]
+Mask 010 represents [B]
+Mask 011 represents [A, B]
+Mask 100 represents [C]
+Mask 101 represents [A, C]
+Mask 110 represents [B, C]
+Mask 111 represents [A, B, C]
+
+By iterating from 0 to 2^n - 1, every possible binary selection pattern is visited exactly once.
+
+Working Principle
+
+The algorithm follows these steps:
+
+1. Let n be the number of elements in the input set.
+2. Calculate the total number of subsets as 2^n.
+3. Iterate mask values from 0 to 2^n - 1.
+4. For each mask, create an empty current subset.
+5. Check every bit position from 0 to n - 1.
+6. If the bit at position i is set, include the element at index i in the current subset.
+7. Store or display the current subset.
+8. Continue until all masks have been processed.
+
+The empty subset is produced when the mask is 0 because no bit is set. The full set is produced when all n bits are set.
+
+Advantages
+
+Simple and systematic way to generate all subsets.
+Uses bitwise operations, which are fast and easy to implement.
+Generates every subset exactly once.
+Works well for small to moderate input sizes.
+Useful for understanding binary representation and enumeration.
+Avoids recursive function calls when implemented iteratively.
+
+Disadvantages
+
+The number of subsets grows exponentially with the number of elements.
+Not suitable for very large sets because 2^n becomes too large.
+May require high memory if all subsets are stored at once.
+Bit manipulation can be difficult for beginners at first.
+The order of generated subsets depends on mask order, not necessarily lexicographical order.
+
+Applications
+
+Generating all subsets of an array or set.
+Solving brute force subset selection problems.
+Enumerating combinations for small input sizes.
+Checking all possible groups in optimization problems.
+Building solutions for bitmask-based dynamic programming.
+Testing candidate subsets in constraint-based problems.
+
+Real Life Applications
+
+Selecting all possible teams from a small group of people.
+Listing all feature combinations for software testing.
+Generating all possible menu or package combinations.
+Exploring all subsets of selected items in inventory analysis.
+Evaluating all possible configuration choices in a small system.
+Creating combinations of permissions, tags, or filters.
+
+Time Complexity
+
+O(n * 2^n)
+
+There are 2^n masks, and for each mask the algorithm checks up to n bit positions. Therefore, the total running time is O(n * 2^n).
+
+If each generated subset is printed or stored, the same complexity is required because the total output size is also proportional to n * 2^n.
+
+Space Complexity
+
+O(n * 2^n) when all subsets are stored.
+
+The power set contains 2^n subsets, and the total number of elements across all generated subsets is proportional to n * 2^n.
+
+If subsets are generated and processed one at a time without storing the full result, the auxiliary space can be O(n) for the current subset, excluding the output.
+
+Stable / Not Stable
+
+Not applicable as a sorting stability concept because Power Set Generation via Bitmask is not a sorting algorithm.
+
+However, when the input order is fixed, the relative order of elements inside each generated subset is preserved if elements are added by scanning indexes from left to right.
+
+In-place / Not In-place
+
+Not in-place when the complete power set is stored, because additional memory is required to hold all generated subsets.
+
+If the algorithm only prints or processes one subset at a time, it does not modify the input set and uses only a small amount of auxiliary memory apart from the current subset.
+
+Prerequisites
+
+Basic understanding of arrays or lists.
+Knowledge of binary number representation.
+Understanding of bitwise AND operation.
+Understanding of left shift operation.
+Ability to use loops and conditional statements.
+Basic idea of subsets and combinations.
+
+Common Mistakes
+
+Forgetting to include the empty subset.
+Using 2^n incorrectly instead of calculating 1 << n in code.
+Checking the wrong bit position for an element.
+Mixing zero-based and one-based indexing.
+Assuming the algorithm is efficient for large values of n.
+Forgetting that storing all subsets requires exponential memory.
+Changing the input order and then expecting the same subset generation order.
+
+When to Use
+
+Use Power Set Generation via Bitmask when all subsets of a small set are required.
+Use it when n is small enough that 2^n operations are acceptable.
+Use it when an iterative bitwise solution is preferred over recursion.
+Use it for learning subset enumeration and bit manipulation.
+Use it when every possible selection pattern must be explored.
+
+When Not to Use
+
+Do not use it when the input size is large and generating all subsets is impractical.
+Do not use it when only one optimal subset is needed and a more efficient algorithm exists.
+Do not use it when the problem can be solved directly without enumerating all subsets.
+Do not use it when memory limits cannot support storing the power set.
+Do not use it when recursive backtracking is specifically required for pruning invalid choices early.
+
+For more information visit Codorythm platform.

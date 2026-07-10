@@ -1,0 +1,114 @@
+Aim
+
+The aim of the 3Sum Problem is to find groups of three numbers in an array whose sum satisfies a required condition, most commonly a sum of zero. It helps learners understand sorting, two-pointer searching, duplicate handling, and how to reduce a cubic brute-force search into a quadratic-time algorithm.
+
+Definition
+
+The 3Sum Problem asks whether an array contains three elements a, b, and c such that a + b + c equals a given target. In the classic version, the target is 0 and the expected output is all unique triplets whose values sum to zero.
+
+Theory
+
+A direct solution checks every possible triplet using three nested loops. That approach is simple but slow because it takes O(n^3) time. A better approach sorts the array first, fixes one element, and then uses two pointers to find two other elements that complete the target sum.
+
+After sorting, if one value is fixed at index i, the remaining task becomes a two-sum search on the subarray to the right of i. One pointer starts just after i and the other starts at the end of the array. If the current sum is too small, moving the left pointer increases the sum. If the current sum is too large, moving the right pointer decreases the sum. This ordered movement avoids checking every pair separately.
+
+When the goal is to return unique triplets, duplicate values must be skipped carefully. Duplicate fixed values should be ignored, and after a valid triplet is found, repeated left and right pointer values should also be skipped.
+
+Working Principle
+
+1. Sort the input array in nondecreasing order.
+2. Iterate through the array and fix one element at a time.
+3. For each fixed element, place one pointer immediately after it and another pointer at the end of the array.
+4. Calculate the sum of the fixed value and the two pointer values.
+5. If the sum equals the target, store the triplet and move both pointers while skipping duplicates.
+6. If the sum is smaller than the target, move the left pointer to the right.
+7. If the sum is greater than the target, move the right pointer to the left.
+8. Continue until all valid triplets are found.
+
+Advantages
+
+The sorted two-pointer method is much faster than brute force for large inputs.
+It is easy to reason about once the array is sorted.
+It naturally produces triplets in sorted value order.
+It can avoid duplicate triplets without using a large set of triplet strings.
+It forms the basis for related problems such as 3Sum Closest, 4Sum, and k-Sum.
+
+Disadvantages
+
+The array must be sorted, which changes the original order unless a copy is used.
+Careless duplicate handling can produce repeated triplets.
+The O(n^2) time complexity may still be expensive for very large arrays.
+Returning all triplets can require significant output space when many valid combinations exist.
+The technique depends on ordered data, so it is not directly useful before sorting.
+
+Applications
+
+Finding combinations of three values that meet a target.
+Detecting zero-sum triples in numeric datasets.
+Solving interview problems based on pair searching after sorting.
+Building extensions such as 4Sum and generalized k-Sum.
+Counting triplets less than, greater than, or closest to a target.
+
+Real Life Applications
+
+Financial systems can use similar logic to find three transactions whose net effect is zero.
+Inventory planning can search for three item quantities that match a required capacity.
+Analytics tools can detect balancing combinations in numerical data.
+Game and simulation systems can identify three-value combinations that meet a rule.
+Optimization tasks can use 3Sum-style searching to test compact combinations efficiently.
+
+Time Complexity
+
+The brute-force solution takes O(n^3) time because it checks every triplet.
+The optimized sorting and two-pointer solution takes O(n^2) time after sorting.
+Sorting takes O(n log n), but O(n^2) dominates for large n, so the overall time complexity is O(n^2).
+
+Space Complexity
+
+The auxiliary space complexity is O(1) if the array is sorted in place and the output list is not counted.
+If the original array must be preserved, copying the array requires O(n) extra space.
+The output itself may require O(k) space, where k is the number of valid triplets.
+
+Stable / Not Stable
+
+The 3Sum Problem is not a sorting algorithm, so stability is not directly applicable. If an in-place sort is used before applying the two-pointer method, the original relative order of equal elements is not guaranteed to be preserved. Therefore, as a complete procedure involving sorting, it should be treated as not stable.
+
+In-place / Not In-place
+
+The optimized 3Sum method can be implemented in place if modifying the input array is allowed, because it can sort the array in place and use only a few pointer variables besides the result storage. If the input order must be preserved, the algorithm is not in-place because it needs a copied array.
+
+Prerequisites
+
+Basic array traversal.
+Sorting in nondecreasing order.
+Two-pointer technique.
+Handling duplicates in sorted arrays.
+Understanding time and space complexity.
+Basic knowledge of target-sum problems.
+
+Common Mistakes
+
+Using three nested loops when an O(n^2) solution is expected.
+Forgetting to sort the array before using two pointers.
+Skipping duplicates incorrectly and missing valid triplets.
+Not skipping duplicates at all and returning repeated triplets.
+Moving the wrong pointer when the current sum is too small or too large.
+Using integer types that are too small when values can be large.
+Counting output space as auxiliary space without clearly stating the assumption.
+
+When to Use
+
+Use 3Sum when you need to find or count three numbers that satisfy a target-sum condition.
+Use it when sorting the input is acceptable.
+Use it when the array size makes O(n^3) brute force too slow.
+Use it when unique value triplets are required.
+Use it as a foundation for 3Sum Closest, 4Sum, and k-Sum variations.
+
+When Not to Use
+
+Do not use this approach when preserving the exact original order is required and copying is not allowed.
+Do not use it when the input is too large for O(n^2) time and a more specialized constraint-based method is available.
+Do not use it when the problem asks for subsequences or ordered triples rather than value combinations.
+Do not use it when the data stream changes continuously and sorting the whole array repeatedly is too expensive.
+
+For more information visit Codorythm platform.
