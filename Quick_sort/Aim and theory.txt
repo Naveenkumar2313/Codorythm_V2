@@ -1,0 +1,54 @@
+Aim :- 
+
+The aim of this visualization is to help learners understand the working of the Quick Sort algorithm using the Divide and Conquer technique.
+
+This simulator enables users to:
+
+Visualize how the array is partitioned around a pivot element.
+Identify how elements are rearranged during each partitioning step.
+Interactively control each sorting step and trace the sorting process.
+Receive real-time updates on pivot selection and element swaps.
+Learn how the divide and conquer strategy efficiently sorts data.
+
+This is ideal for learners exploring divide and conquer algorithms and efficient sorting techniques.
+
+Theory:- 
+
+Definition:  Quick Sort is a divide and conquer sorting algorithm that sorts an array by selecting a pivot element, partitioning the array into smaller subarrays, and recursively sorting those subarrays.
+
+Working Principle:  The algorithm selects a pivot element and rearranges the array so that all elements smaller than the pivot are placed before it and all larger elements are placed after it. The same process is then recursively applied to the left and right subarrays until the entire array is sorted.
+
+Precondition: The input must be a valid array of elements that can be compared.
+
+Advantages: 
+
+Fast and efficient for large datasets.
+In-place sorting with low memory usage.
+
+Disadvantages:
+
+Worst-case performance occurs when poor pivot selection is made.
+Not a stable sorting algorithm.
+
+Time Complexity:O(nlogn) for best-case and O(n²) for worst case
+
+Space Complexity:O(logn) for average recursion stack
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+Aim :-
+
+The aim of this visualization is to help learners understand the working of the Sudoku Solver algorithm using the Backtracking technique.
+
+This simulator enables users to:
+- Visualize how numbers are placed and removed while solving the Sudoku puzzle.
+- Identify how backtracking helps find the correct solution.
+- Interactively control each solving step and trace the solving process.
+- Receive real-time updates on valid and invalid number placements.
+- Learn how recursive backtracking efficiently solves Sudoku puzzles.
+
+This is ideal for learners exploring recursion, backtracking, and constraint satisfaction problems.
+
+Theory:-
+
+Definition: Sudoku Solver is a backtracking algorithm used to solve a Sudoku puzzle by filling empty cells with valid digits while satisfying all Sudoku rules.
+
+Working Principle: The solver finds an empty cell, tries numbers from 1 to 9, and checks whether each number is valid in the current row, column, and 3×3 subgrid. If a valid number is found, it is placed and the solver moves to the next empty cell. If no valid number can be placed, it backtracks by removing the previous number and trying a different possibility until the puzzle is solved.
+
+Precondition: The Sudoku puzzle must be a valid 9×9 grid with some cells already filled according to Sudoku rules.
+
+Advantages:
+- Guarantees finding a solution if one exists.
+- Easy to implement using recursion and backtracking.
+
+Disadvantages:
+- Can take longer for highly complex puzzles.
+- Recursive calls may increase execution time for difficult cases.
+
+Time Complexity: O(9^81)
+
+Space Complexity: O(1) for a fixed 9×9 board (or O(81) stack space).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+Aim :- 
+
+The aim of this visualization is to help learners understand the working of the Rat in a Maze algorithm using the Backtracking technique.
+
+This simulator enables users to:
+
+Visualize how the rat explores different paths in the maze.
+Identify how backtracking helps find a valid path from the source to the destination.
+Interactively control each movement step and trace the path-finding process.
+Receive real-time updates on valid and blocked paths.
+Learn how recursive backtracking efficiently solves the Rat in a Maze problem.
+
+This is ideal for learners exploring recursion, backtracking, and path-finding algorithms.
+
+Theory:- 
+
+Definition: Rat in a Maze is a backtracking algorithm used to find a valid path for a rat to travel from the starting cell to the destination cell in a maze while avoiding blocked cells.
+
+Working Principle:The algorithm starts from the source cell and explores all possible directions. If a move is valid, it marks the cell as part of the path and continues searching. If the path leads to a dead end, it backtracks by removing the cell from the current path and tries another direction until the destination is reached or all possibilities are exhausted.
+
+Precondition: The maze must be a valid grid with open and blocked cells, and both the source and destination cells must be accessible.
+
+Advantages: 
+
+Guarantees finding a path if one exists.
+Simple and effective for solving maze traversal problems.
+
+Disadvantages:
+
+Can be slow for large or complex mazes.
+May require many recursive calls, increasing execution time.
+
+Time Complexity: O(2^(N×N)) (Worst Case)
+
+Space Complexity: O(N×N)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

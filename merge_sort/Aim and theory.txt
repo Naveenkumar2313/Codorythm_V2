@@ -1,0 +1,36 @@
+Aim :-
+
+The aim of this visualization is to help learners understand how the Merge Sort algorithm works by recursively splitting an array into halves and merging the sorted parts back together.
+
+This simulator enables users to:
+
+- Visualize how the array is divided into smaller subarrays.
+- Observe how each half is sorted independently before merging.
+- Understand how merge sort uses the divide-and-conquer strategy.
+- Trace the recursive calls and merge steps step by step.
+- Learn why merge sort achieves O(n log n) time complexity.
+
+This is ideal for learners exploring sorting techniques and understanding efficient recursive algorithms.
+
+Theory:-
+
+Definition: Merge Sort is a divide-and-conquer sorting algorithm that splits an array into two halves, sorts each half recursively, and then merges the two sorted halves into one sorted array.
+
+Working Principle: The array is repeatedly divided in half until each subarray has one element. Then adjacent sorted subarrays are merged back together in sorted order.
+
+Precondition: The input can be any list of values; merge sort does not require the array to be initially sorted.
+
+Advantages:
+
+- Efficient and predictable with O(n log n) time complexity.
+- Stable sorting: equal elements keep their relative order.
+- Works well for large datasets and linked lists.
+
+Disadvantages:
+
+- Requires extra memory for temporary arrays during merging.
+- May be less efficient than quick sort for small arrays in some languages.
+
+Time Complexity: O(n log n)
+
+Space Complexity: O(n) for the temporary merge array.

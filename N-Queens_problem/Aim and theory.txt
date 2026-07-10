@@ -1,0 +1,56 @@
+Aim :- 
+
+The aim of this visualization is to help learners understand the working of the N-Queens Problem algorithm using the Backtracking technique.
+
+This simulator enables users to:
+
+Visualize how queens are placed on the chessboard without attacking each other.
+Identify how backtracking helps find a valid arrangement of queens.
+Interactively control each placement step and trace the solving process.
+Receive real-time updates on valid and invalid queen placements.
+Learn how recursive backtracking efficiently solves the N-Queens Problem.
+
+This is ideal for learners exploring recursion, backtracking, and constraint satisfaction problems.
+
+Theory:- 
+
+Definition:  The N-Queens Problem is a backtracking algorithm used to place N queens on an N × N chessboard such that no two queens attack each other.
+
+Working Principle:The algorithm places one queen in each row and checks whether the placement is safe by ensuring no other queen exists in the same column, diagonal, or anti-diagonal. If a safe position is found, it proceeds to the next row. If no valid position exists, it backtracks by removing the previously placed queen and tries another position until a solution is found.
+
+Precondition: The chessboard size N must be a positive integer, and queens must be placed according to the rules of chess.
+
+Advantages:
+
+Guarantees finding a solution if one exists.
+Efficiently demonstrates recursion and backtracking concepts.
+
+Disadvantages:
+
+Execution time increases rapidly as the value of N grows.
+May require many recursive calls for larger board sizes.
+
+
+Time Complexity:O(N!) for worst case.
+
+Space Complexity:O(N) for both auxiliary+stack.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

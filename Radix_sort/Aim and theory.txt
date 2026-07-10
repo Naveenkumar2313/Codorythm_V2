@@ -1,0 +1,55 @@
+Aim :- 
+
+The aim of this visualization is to help learners understand the working of the Radix Sort algorithm for sorting integer elements efficiently.
+
+This simulator enables users to:
+
+Visualize how numbers are sorted digit by digit.
+Identify how each digit position contributes to the final sorted order.
+Interactively control each sorting step and trace the sorting process.
+Receive real-time updates on digit-wise grouping and placement of elements.
+Learn how Radix Sort efficiently sorts numbers without comparing elements.
+
+This is ideal for learners exploring non-comparison sorting techniques and efficient sorting algorithms.
+
+Theory:- 
+
+Definition: Radix Sort is a non-comparison sorting algorithm that sorts integers by processing individual digits from the least significant digit (LSD) to the most significant digit (MSD), using a stable sorting algorithm such as Counting Sort. 
+
+Working Principle: The algorithm processes one digit position at a time, beginning with the least significant digit. At each step, elements are grouped according to the current digit and sorted using a stable sorting method. This process continues for all digit positions until the entire array is sorted.
+
+Precondition:  The input must consist of non-negative integers with a known maximum number of digits.
+
+Advantages: 
+
+Efficient for sorting integers with a limited number of digits.
+Faster than comparison-based sorting for large datasets with fixed-length keys.
+
+Disadvantages:
+
+Requires additional memory for intermediate storage.
+Not suitable for floating-point numbers or data with variable-length keys without modifications.
+
+Time Complexity:O(d.(n+b)) : all cases
+
+Space Complexity:O(n+b) for iterative, O(n+b+d) for recursive implementation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

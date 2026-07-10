@@ -1,0 +1,56 @@
+Aim :- 
+
+The aim of this visualization is to help learners understand the working of the Counting Sort algorithm for sorting integer elements efficiently.
+
+This simulator enables users to:
+
+Visualize how the frequency of each element is counted.
+Identify how the count array is used to determine the sorted order.
+Interactively control each sorting step and trace the sorting process.
+Receive real-time updates on counting and placement of elements.
+Learn how Counting Sort achieves linear time complexity for a limited range of input values.
+
+This is ideal for learners exploring non-comparison sorting techniques and efficient sorting algorithms.
+
+Theory:- 
+
+Definition:Counting Sort is a non-comparison sorting algorithm used to sort integer elements by counting the number of occurrences of each distinct value and using this information to place elements in sorted order.
+
+Working Principle: The algorithm first finds the maximum value in the array and creates a count array. It counts the occurrence of each element, computes the cumulative counts, and then places each element into its correct position in the output array. Finally, the sorted elements are copied back to the original array.
+
+Precondition: The input must consist of integer values within a known and limited range.
+
+Advantages: 
+
+Faster than comparison-based sorting for a small range of input values.
+Stable sorting algorithm with linear time complexity.
+
+Disadvantages:
+
+Not suitable for a large range of input values.
+Requires additional memory for the count array.
+
+Time Complexity:O(n+k)
+
+Space Complexity:O(n+k)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

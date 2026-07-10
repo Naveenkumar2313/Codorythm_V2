@@ -1,0 +1,55 @@
+Aim :- 
+
+The aim of this visualization is to help learners understand the working of the Activity Selection Problem algorithm using the Greedy technique
+
+This simulator enables users to:
+
+Visualize how activities are selected based on their start and finish times.
+Identify how the greedy approach chooses the maximum number of non-overlapping activities.
+Interactively control each selection step and trace the activity selection process.
+Receive real-time updates on selected and rejected activities.
+Learn how the greedy strategy efficiently solves the Activity Selection Problem.
+
+This is ideal for learners exploring greedy algorithms and optimization problems.
+
+Theory:- 
+
+Definition: Activity Selection Problem is a greedy algorithm used to select the maximum number of non-overlapping activities from a given set of activities based on their start and finish times.
+
+Working Principle: The algorithm first sorts the activities in ascending order of their finish times. It selects the first activity and then repeatedly chooses the next activity whose start time is greater than or equal to the finish time of the last selected activity. This process continues until all activities are considered.
+
+Precondition: The activities must have valid start and finish times. Activities are sorted by their finish times before selection.
+
+Advantages: 
+
+Efficiently finds the maximum number of compatible activities.
+Simple and fast using the greedy approach.
+
+Disadvantages:
+
+Applicable only to problems where the greedy choice property holds.
+Does not work for all optimization problems.
+
+Time Complexity:O(nlogn) for unsorted input , o(n) for sorted input.
+
+Space Complexity:O(1) for iterative, O(n) for recursive implementation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
