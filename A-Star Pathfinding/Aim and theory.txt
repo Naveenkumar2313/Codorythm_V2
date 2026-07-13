@@ -1,0 +1,35 @@
+Aim :- 
+
+The aim of this visualization is to help learners understand the A* Pathfinding algorithm on grid environments using real-time search expansions, open/closed list updates, and heuristic distance visualizations.
+
+This simulator enables users to:
+
+Observe how A* evaluates cells using the fitness function f(n) = g(n) + h(n).
+Compare g(n) (cost from start) and h(n) (heuristic Manhattan/Euclidean distance to goal).
+Interactively step through node expansion and updates to the Open list (priority queue).
+Reconstruct the optimal path by backtracking parent pointers from target to start.
+Understand why heuristics make A* faster than Dijkstra on weighted graphs.
+
+This is ideal for learners exploring artificial intelligence path planning and graph traversal techniques.
+
+Theory:- 
+
+Definition: A* is a graph traversal and path planning algorithm that finds the shortest path between a starting node and a goal node. It is widely used in games and mapping applications due to its efficiency and accuracy.
+
+Working Principle: A* uses a heuristic-based evaluation function:
+f(n) = g(n) + h(n)
+where g(n) is the actual cost from start to node n, and h(n) is the estimated cost from node n to the goal.
+At each step, A* pops the node with the lowest f(n) value from the Open list (priority queue), moves it to the Closed list, and evaluates its neighbors. If a neighbor has a lower path cost through the current node, we update its parent pointer and values.
+
+Precondition: The heuristic function h(n) must be admissible (never overestimate the actual cost to goal) and consistent/monotonic to guarantee optimality.
+
+Advantages: 
+- Finds the shortest path efficiently by focusing the search space toward the goal.
+- Guarantees the optimal path under admissible heuristics.
+
+Disadvantages:
+- High memory usage (O(b^d)) as it stores all generated nodes in memory.
+
+Time Complexity: O(b^d) worst-case, where b is branching factor and d is depth.
+
+Space Complexity: O(b^d) to store all nodes in the open/closed lists.

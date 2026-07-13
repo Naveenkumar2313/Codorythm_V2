@@ -1,0 +1,39 @@
+Aim :- 
+
+The aim of this visualization is to help learners understand the Floyd-Warshall all-pairs shortest path algorithm using dynamic matrix state updates and transition evaluations.
+
+This simulator enables users to:
+
+Visualize the adjacency matrix representation of a weighted directed graph.
+Observe how the distance matrix updates step-by-step as we introduce intermediate vertices.
+Trace the key transition step: comparing direct path cost (i to j) with intermediate cost (i to k + k to j).
+Identify negative-weight cycles when negative values appear on the main diagonal.
+Learn how Floyd-Warshall solves all-pairs shortest paths in O(V^3) time.
+
+This is ideal for learners exploring dense graphs and dynamic programming network routing.
+
+Theory:- 
+
+Definition: Floyd-Warshall is an algorithm for finding shortest paths in a weighted graph with positive or negative edge weights (but no negative cycles). A single execution of the algorithm will find the lengths (summed weights) of shortest paths between all pairs of vertices.
+
+Working Principle: The algorithm is based on dynamic programming:
+Let dist[i][j] be the shortest path from vertex i to j.
+For each intermediate vertex k (from 0 to V-1):
+  For each source i (from 0 to V-1):
+    For each destination j (from 0 to V-1):
+      dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])
+By incorporating vertex k as an intermediate step, we check if the path i -> k -> j is shorter than the current direct path i -> j.
+
+Precondition: The graph must not contain any negative-weight cycles.
+
+Advantages: 
+- Simple to implement (three nested loops).
+- Finds shortest paths between all pairs of nodes.
+- Works for negative edge weights.
+
+Disadvantages:
+- Inefficient for sparse graphs where Dijkstra with priority queue runs faster.
+
+Time Complexity: O(V^3) where V is the number of vertices.
+
+Space Complexity: O(V^2) to store the distance matrix.

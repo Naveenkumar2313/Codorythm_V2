@@ -1,0 +1,38 @@
+Aim :- 
+
+The aim of this visualization is to help learners understand the working of the Single Number (XOR Trick) algorithm using bitwise animations and interactive step-by-step control.
+
+This simulator enables users to:
+
+Visualize how bitwise XOR operations work on binary representation of numbers.
+Identify how the XOR operation cancels out duplicate numbers (A XOR A = 0).
+Interactively control steps and trace the running XOR sum.
+Receive real-time feedback on bitwise transitions.
+Learn how the XOR trick achieves O(n) time complexity and O(1) space complexity.
+
+This is ideal for learners exploring bitwise optimization techniques and dynamic problem solving.
+
+Theory:- 
+
+Definition: The XOR Trick is a bitwise technique that utilizes the properties of the eXclusive OR (XOR) operation to find unique elements, missing numbers, or solve parity problems efficiently in linear time and constant space.
+
+Working Principle: The XOR operation has three main properties:
+1. Commutative: A ^ B = B ^ A
+2. Associative: (A ^ B) ^ C = A ^ (B ^ C)
+3. Identity & Self-Inverse: A ^ 0 = A, and A ^ A = 0
+When we XOR all elements in an array where all elements appear an even number of times (e.g., twice) except one, the duplicate elements cancel each other out to 0, leaving only the unique element.
+
+Precondition: The duplicates must appear an even number of times, and the unique element must appear an odd number of times (commonly once).
+
+Advantages: 
+- Requires no extra space (O(1) auxiliary space), unlike hashing.
+- Runs in a single pass (O(n) time complexity).
+- Highly optimized at the hardware/CPU level.
+
+Disadvantages:
+- Harder to read/understand for beginners than standard hash-maps.
+- Limited to specific frequency patterns (odd/even counts).
+
+Time Complexity: O(n)
+
+Space Complexity: O(1)
