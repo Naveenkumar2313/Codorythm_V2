@@ -1,0 +1,40 @@
+Aim :- 
+
+The aim of this visualization is to help learners understand the optimal binary search partition method to find the Median of Two Sorted Arrays in logarithmic O(log(min(m, n))) time.
+
+This simulator enables users to:
+
+Visualize partition points in both sorted arrays.
+Understand the partition condition: elements to the left must be smaller than elements to the right.
+Interactively adjust partition pointers based on comparison results.
+Observe how the median is calculated for odd and even total lengths.
+Learn how the O(log(min(m,n))) efficiency is achieved by applying binary search on the smaller array.
+
+This is ideal for learners exploring advanced divide-and-conquer techniques and optimized search algorithms.
+
+Theory:- 
+
+Definition: Given two sorted arrays nums1 and nums2 of sizes m and n respectively, find the median of the two sorted arrays. The overall run time complexity should be O(log(m+n)) or O(log(min(m,n))).
+
+Working Principle: To find the median, we partition both arrays into two halves such that:
+1. The left half contains the same number of elements as the right half (or one more).
+2. Every element in the left half is less than or equal to every element in the right half.
+We perform binary search on the smaller array (say nums1) to find partition index `i`. The partition index in nums2 is `j = (m + n + 1) / 2 - i`.
+We check:
+- If nums1[i-1] <= nums2[j] and nums2[j-1] <= nums1[i], we have found the correct partition!
+- If nums1[i-1] > nums2[j], we must search left in nums1.
+- If nums2[j-1] > nums1[i], we must search right in nums1.
+Once partitioned, the median is calculated using the boundary elements.
+
+Precondition: Both input arrays must be sorted.
+
+Advantages: 
+- Highly optimized, executing in logarithmic time regardless of data size.
+- Avoids the O(m+n) space and time overhead of merging.
+
+Disadvantages:
+- The logic is highly complex with multiple edge cases (boundary conditions).
+
+Time Complexity: O(log(min(m, n)))
+
+Space Complexity: O(1)

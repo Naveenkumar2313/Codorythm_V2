@@ -1,0 +1,33 @@
+Aim :- 
+
+The aim of this visualization is to help learners understand the process of flattening a Binary Tree into a right-skewed linked list in-place using depth-first search (DFS) and post-order traversal animations.
+
+This simulator enables users to:
+
+Visualize the step-by-step modification of tree pointers (left and right).
+Identify how left subtrees are relocated to the right side of the nodes.
+Interactively step through the traversal (preorder / postorder) and pointer updates.
+Receive audio-visual feedback on node pointer redirection.
+Understand how preorder traversal order is maintained in the flattened structure.
+
+This is ideal for learners exploring binary tree manipulations and tree-to-list conversions.
+
+Theory:- 
+
+Definition: Flattening a Binary Tree to a Linked List is an operation that takes a binary tree and rearranges its nodes in-place into a single right-skewed list. The order of nodes in the linked list must correspond to the Preorder Traversal of the original tree.
+
+Working Principle: A common recursive approach is a reverse-preorder traversal (Right-Left-Root). We keep track of the previously visited node (say, `prev`). For the current node, we flatten its right subtree, then its left subtree, and then redirect its right pointer to `prev`, and set its left pointer to null. Finally, we update `prev` to be the current node.
+An iterative approach utilizes a Morris traversal-like logic: for each node, if it has a left child, find the rightmost node of that left child, link it to the node's right child, move the left child to the right, and set the left child to null.
+
+Precondition: The data structure is a binary tree with node references.
+
+Advantages: 
+- Can be done in-place with O(1) extra space (using Morris traversal).
+- Simplifies tree traversal by converting it to a linear structure.
+
+Disadvantages:
+- Destroys the original tree structure (loss of left-right relationships).
+
+Time Complexity: O(n) where n is the number of nodes.
+
+Space Complexity: O(1) auxiliary space for Morris traversal, O(h) stack space for recursion (where h is the tree height).

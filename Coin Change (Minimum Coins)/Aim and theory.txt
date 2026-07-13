@@ -1,0 +1,36 @@
+Aim :- 
+
+The aim of this visualization is to help learners understand the Coin Change (Minimum Coins) dynamic programming algorithm using standard 1D state array animations.
+
+This simulator enables users to:
+
+Visualize how the minimum coins array (dp) is filled step-by-step up to the target amount.
+Observe how we consider each coin option for every sub-amount to find the minimum cost.
+Interactively inspect updates and watch decisions change based on coin availability.
+Reconstruct the actual coins used to get the target amount.
+Trace recursion stack tree transitions to understand why overlapping subproblems benefit from dynamic programming.
+
+This is ideal for learners exploring target sum combinations and optimization patterns.
+
+Theory:- 
+
+Definition: The Coin Change (Minimum Coins) problem is to find the minimum number of coins from a given set of denominations needed to make up a given amount. If the amount cannot be made up by any combination, return -1. Coins are available in infinite supply.
+
+Working Principle: Let coins be C and target amount be A:
+1. Initialize a 1D array dp of size A+1 with a large value (infinity), and set dp[0] = 0.
+2. For each amount i from 1 to A:
+   - For each coin c in C:
+     - If c <= i, then dp[i] = min(dp[i], dp[i-c] + 1).
+3. If dp[A] remains infinity, return -1. Otherwise, return dp[A].
+
+Precondition: Denominations must be positive.
+
+Advantages: 
+- Replaces standard exponential backtracking with linear O(A * n) runtime.
+
+Disadvantages:
+- Relies on positive integer amounts. Not suited for float values without scaling.
+
+Time Complexity: O(A * n) where A is the amount and n is the number of coins.
+
+Space Complexity: O(A)

@@ -1,0 +1,36 @@
+Aim :- 
+
+The aim of this visualization is to help learners understand the 0/1 Knapsack optimization problem using 2D DP state animations showing inclusion and exclusion transitions.
+
+This simulator enables users to:
+
+Visualize the dynamic programming table update step-by-step.
+Understand the optimal substructure: deciding whether to pick the current item (and add its value) or skip it.
+Interactively observe the remaining weight capacity capacity change.
+Reconstruct the set of chosen items via backtracking.
+Compare DP O(n*W) optimization with naive exponential recursion.
+
+This is ideal for learners exploring dynamic programming optimization and resource allocation.
+
+Theory:- 
+
+Definition: The 0/1 Knapsack Problem is a classic optimization problem. Given a set of items, each with a weight and a value, determine the maximum value of items we can include in a knapsack of a fixed capacity W, such that the total weight does not exceed W. "0/1" means items cannot be divided: we either pick an item or not.
+
+Working Principle: Let values be V and weights be Wt of size n.
+1. Initialize a 2D table dp of size (n+1) x (W+1) with 0.
+2. For item i and capacity w:
+   - If wt[i-1] <= w, then dp[i][w] = max(val[i-1] + dp[i-1][w-wt[i-1]], dp[i-1][w]).
+   - Else dp[i][w] = dp[i-1][w].
+3. The value at dp[n][W] is the maximum knapsack value.
+
+Precondition: Weights and capacity must be positive integers.
+
+Advantages: 
+- Solves knapsack in pseudo-polynomial time O(n*W), far faster than O(2^n).
+
+Disadvantages:
+- If capacity W is extremely large, the DP approach becomes impractical.
+
+Time Complexity: O(n * W)
+
+Space Complexity: O(n * W) or O(W) space-optimized.
